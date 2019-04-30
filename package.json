@@ -2,17 +2,37 @@
   "name": "ministr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".lib/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint lib/** --fix",
+    "eslint": "eslint lib/**"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^1.14.0"
+    "puppeteer": "^1.15.0"
   },
   "devDependencies": {
-    "jest": "^24.6.0"
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.1.0",
+    "jest": "^24.6.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
