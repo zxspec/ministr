@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^1.14.0"
+    "puppeteer": "1.14.x"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
